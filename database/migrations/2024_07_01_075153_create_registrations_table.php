@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('registrations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('lesson_id')->constrained('lessons');
+            $table->foreignId('student_id')->constrained('students');
+            $table->decimal('price', 8, 2);
             $table->timestamps();
         });
+
     }
 
     /**
