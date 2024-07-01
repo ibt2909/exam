@@ -2,16 +2,21 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class LessonsTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        //
+        foreach (range(1, 50) as $index) {
+            DB::table('lessons')->insert([
+                'classroom_id' => rand(1, 10),
+                'branch_id' => rand(1, 5),
+                'teacher_id' => rand(1, 10),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
     }
 }
+

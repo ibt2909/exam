@@ -2,16 +2,19 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class TeachersTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        //
+        $teachers = ["Sapar", "Maysa", "Arslan", "Dowlet", "Aman", "Shemshat", "Rowshen", "Aynur", "Suleyman", "Mahri"];
+        foreach ($teachers as $name) {
+            DB::table('teachers')->insert([
+                'first_name' => $name,
+                'last_name' => 'Lastname'
+            ]);
+        }
     }
 }
+

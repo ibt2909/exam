@@ -2,16 +2,17 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class LocationsTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        //
+        DB::table('locations')->insert([
+            ['name' => 'uniwermag'],
+            ['name' => 'mir 1 sahamca'],
+            ['name' => 'anew']
+        ]);
     }
 }
+
