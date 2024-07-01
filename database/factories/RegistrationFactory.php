@@ -2,22 +2,20 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Registration>
- */
-class RegistrationFactory extends Factory
-{
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
-    {
-        return [
-            //
-        ];
-    }
-}
+use App\Models\Registration;
+use App\Models\Lesson;
+use App\Models\Student;
+use Faker\Generator as Faker;
+
+$factory->define(Registration::class, function (Faker $faker) {
+    return [
+        'lesson_id' => Lesson::inRandomOrder()->first()->id,
+        'student_id' => Student::inRandomOrder()->first()->id,
+        'price' => $faker->randomFloat(2, 100, 500),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ];
+});
+

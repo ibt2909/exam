@@ -2,22 +2,15 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Branch>
- */
-class BranchFactory extends Factory
-{
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
-    {
-        return [
-            //
-        ];
-    }
-}
+use App\Models\Branch;
+use Faker\Generator as Faker;
+
+$factory->define(Branch::class, function (Faker $faker) {
+    $branches = ['beginner', 'elementary', 'pre-intermediate', 'intermediate', 'upper-intermediate'];
+    return [
+        'name' => $faker->unique()->randomElement($branches),
+    ];
+});
+

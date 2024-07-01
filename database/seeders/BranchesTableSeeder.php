@@ -8,11 +8,8 @@ class BranchesTableSeeder extends Seeder
 {
     public function run()
     {
-        foreach (['beginner', 'elementary', 'pre-intermediate', 'intermediate', 'upper-intermediate'] as $name) {
-            DB::table('branches')->insert([
-                'name' => $name
-            ]);
-        }
+        factory(App\Models\Branch::class, 5)->create();
     }
 }
+
 
