@@ -12,7 +12,7 @@ class CreateRegistrationsTable extends Migration
             $table->id();
             $table->foreignId('lesson_id')->constrained();
             $table->foreignId('student_id')->constrained();
-            $table->decimal('price', 8, 2);
+            $table->double('price', 8, 2);
             $table->timestamps();
         });
     }

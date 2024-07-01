@@ -8,9 +8,14 @@ class LocationsTableSeeder extends Seeder
 {
     public function run()
     {
-        factory(App\Models\Location::class, 3)->create();
+        DB::table('locations')->insert([
+            ['name' => 'uniwermag'],
+            ['name' => 'mir 1 sahamca'],
+            ['name' => 'anew']
+        ]);
     }
 }
+
 
 
 

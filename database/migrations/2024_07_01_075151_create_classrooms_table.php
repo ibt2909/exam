@@ -12,7 +12,6 @@ class CreateClassroomsTable extends Migration
             $table->id();
             $table->foreignId('location_id')->constrained();
             $table->string('name');
-            $table->timestamps();
         });
     }
 

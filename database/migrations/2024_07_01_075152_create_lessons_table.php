@@ -13,7 +13,6 @@ class CreateLessonsTable extends Migration
             $table->foreignId('classroom_id')->constrained();
             $table->foreignId('branch_id')->constrained();
             $table->foreignId('teacher_id')->nullable()->constrained();
-            $table->timestamps();
         });
     }
 

@@ -8,8 +8,14 @@ class ClassroomsTableSeeder extends Seeder
 {
     public function run()
     {
-        factory(App\Models\Classroom::class, 10)->create();
+        foreach (['a1', 'a2', 'a3', 'a4', 'a5', 'b1', 'b2', 'b3', 'b4', 'b5'] as $name) {
+            DB::table('classrooms')->insert([
+                'location_id' => rand(1, 3),
+                'name' => $name
+            ]);
+        }
     }
 }
+
 
 
