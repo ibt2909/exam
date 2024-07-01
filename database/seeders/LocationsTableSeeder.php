@@ -13,3 +13,4 @@ class LocationsTableSeeder extends Seeder
 }
 
 
+
